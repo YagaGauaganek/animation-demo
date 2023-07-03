@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 2rem;
+}
+
+img {
+    height: 300px;
+    width: 40%;
+    object-fit: cover; /*web response*/
+    object-position: center;
+}
+
+/*transforms distors elements from their orginal size/shape/position. transform is the property name however it can have different values such as rotate, scale, skew, and translate */
+
+img:first-child:hover {
+    transform: rotate(30deg);
+    /*transform: scale(1.5);
+    transform: translateX(150px);
+    transform: skewX(30deg);
+    transform: rotate() scale() translate() skew();*/
+    transition: 2s;
+
+}
+
+img:last-child:hover {
+    transform: rotate(-360deg);
+    /*transform: translateX(-250px, 400px);
+    transform: skewX(30deg, 30deg);
+    transform: rotate() scale() translate() skew();*/
+    transition: 2000ms;
+}
+
+.rounding {
+    margin-top: 2rem;
+    background-color: palegreen;
+    width: 200px;
+    height: 200px;
+    border-radius: 0;
+    transition: 2s;
+}
+
+.rounding:hover {
+    transition-property: border-radius, background-color;
+    transition-duration: 2s, 2s;
+    transition-timing-function: linear, ease-in;
+    border-radius: 50%;
+    background-color: palevioletred;
+}
+
+.doNothing {
+    background-color: purple;
+    opacity: 0.5;
+    outline: 2px solid ivory;
+    transition: opacity 100ms linear;
+}
+
+.doNothing:hover {
+    /*transition-property: opacity;
+    transition-duration: 100ms;
+    transition-timing-function: linear;*/
+    opacity: 1;
+}
+
+.doNothing:active {
+    /*there was more, check demo*/
+    transition-property: outline;
+    transition-duration: 1000ms;
+    transition-timing-function: linear;
+    outline: 12px solid hotpink;
+}
+
+.animation {
+    margin-top: 2rem;
+    background-color: paleturquoise;
+    border: 2px solid palegoldenrod;
+    border-radius: 3%;
+    width:  400px;
+    height: 400px;
+}
+
+.animationElement {
+    width: 10%;
+    height: 10%;
+    background-color: springgreen;
+    animation-name: moveRight;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes moveRight {
+    0% {
+        left: 0;
+        top: 0;
+    }
+    25% {
+        left: 90%;
+        top: 90%;
+        background-color: tomato;
+    }
+    50% {
+        left: 90%;
+        top: 0;
+        background-color: yellowgreen;
+    }
+    75% {
+        left: 0;
+        top: 90%;
+        background-color: indianred; 
+    }
+    100% {
+        left: 0;
+        top: 0;
+        background-color: springgreen;
+    }
+}
